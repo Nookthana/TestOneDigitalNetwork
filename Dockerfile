@@ -9,6 +9,8 @@ WORKDIR /var/www/html
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+RUN composer install --no-interaction --prefer-dist
+
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
 EXPOSE 80
