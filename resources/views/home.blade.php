@@ -42,8 +42,7 @@
                                 <div class="card-content">
                                     <a href="{{ route('product.search.detail', ['page' => $page ?? ' ', 'sku' => $product->sku]) }}"
                                         data-toggle="tooltip" data-placement="top" title="View Product Details">
-                                        <img src="{{ Storage::url(optional($product->productImages->first())->image_url) }}"
-                                            class="card-img-top" alt="Example Image" style="cursor: pointer;" />
+                                        <img src="{{ Storage::url(optional($product->productImages->first())->image_url) }}" alt="Thumbnail 1">
                                     </a>
                                     <h3>{{ $product->name }}</h3>
                                     <p>{{ $product->brand }}</p>

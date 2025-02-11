@@ -21,6 +21,19 @@ services:
       - redis
     networks:
       - laravel-network
+    command: |
+      bash -c "composer install --no-interaction && \
+      php artisan config:cache && \
+      php artisan config:clear && \
+      php artisan cache:clear && \
+      php artisan optimize:clear && \
+      php artisan event:clear && \
+      php artisan route:clear && \
+      php artisan migrate --force && \
+      php artisan db:seed --class=ProductSeeder && \
+      php artisan db:seed --class=ProductImageSeeder && \
+      php artisan serve --host=0.0.0.0 --port=8000 & \
+      apache2-foreground"
 
   db:
     image: mariadb:10.5.5
