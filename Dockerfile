@@ -18,11 +18,11 @@ WORKDIR /var/www/html
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN composer install --no-interaction --prefer-dist
+RUN composer install 
+RUN php artisan storage:link  
 
 COPY . /var/www/html
 
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
 CMD ["apache2-foreground"]
-
-
