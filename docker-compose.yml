@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: laravel-app:latest
+    container_name: laravel-test
+    ports:
+      - "8080:80"  
+    volumes:
+      - .:/var/www/html  
+      - ./storage:/var/www/html/storage 
+      - ./vendor:/var/www/html/vendor 
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html/public
+    working_dir: /var/www/html
+    depends_on:
+      - db
+      - redis
+    networks:
+      - laravel-network
+
+  db:
+    image: mariadb:10.5.5
+    container_name: mariadb-app
+    ports:
+      - "3306:3306" 
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_test_22
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    networks:
+      - laravel-network
+
+  redis:
+    image: redis:7.2
+    container_name: redis-app
+    ports:
+      - "6379:6379" 
+    networks:
+      - laravel-network
+
+volumes:
+  mariadb-data:
+
+networks:
+  laravel-network:
+    driver: bridge

@@ -1,0 +1,80 @@
+/* ปรับขนาดโลโก้ให้พอดี */
+.navbar-brand img {
+    height: 30px; 
+}
+
+/* จัดวางเมนูให้อยู่ชิดขวา */
+.navbar-nav {
+    margin-left: auto; 
+}
+
+/* ปรับ padding ของ navbar */
+.navbar {
+    padding: 1rem 1rem; 
+    background-color: #ffffff; /* สีพื้นหลังเป็นสีขาว */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่ม shadow ข้างล่าง navbar */
+}
+
+/* ปรับขนาดตัวอักษรและสีของเมนู */
+.navbar-nav .nav-link {
+    font-size: 16px; 
+    color: #ffffff; 
+}
+
+
+
+/* ปรับสีพื้นหลังของ navbar */
+
+
+
+/* TODO */
+
+/* ปรับขนาดและ padding ของเมนู */
+.navbar-nav .nav-link {
+    font-size: 16px; /* ปรับขนาดตัวอักษร */
+    color: #333; /* ปรับสีตัวอักษร */
+    padding: 10px 20px; /* ปรับ padding บน-ล่าง และ ซ้าย-ขวา */
+    border-radius: 5px; /* ปรับความมนของขอบ */
+    border-radius: 20px;
+    transition: background-color 0.3s ease; /* เพิ่ม transition เพื่อความ smooth */
+  }
+  
+  /* Hover เอฟเฟกต์ */
+  .navbar-nav .nav-link:hover {
+    background-color: #e3f2fd; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    color: #4284f3;/* เปลี่ยนสีตัวอักษรเมื่อ hover */
+    border-radius: 20px; /* ปรับความมนของขอบเป็น 20px */
+  }
+  /* Active Link */
+  .navbar-nav .nav-link.active {
+    background-color: #4284f3; /* สีน้ำเงิน */
+    border-radius: 20px;
+    color: #fff; 
+    
+  }
+/* footer.css หรือไฟล์ที่ใช้สไตล์สำหรับ footer */
+.footer {
+    position: fixed; /* ทำให้ฟุตเตอร์ค้างอยู่ที่ด้านล่าง */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* ให้ฟุตเตอร์ครอบคลุมเต็มความกว้างของหน้าจอ */
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #007bff;
+}
+
+.footer .text-muted {
+    color: #fff;
+}
